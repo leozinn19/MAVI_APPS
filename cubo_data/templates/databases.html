@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de BANCOS</title>
+</head>
+<body>
+    <h1>Lista de BANCOS</h1>
+    <ul>
+        {% for db in dbs %}
+            <li>
+                <a href="{% url 'tables' db.0 %}">{{ db.0 }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

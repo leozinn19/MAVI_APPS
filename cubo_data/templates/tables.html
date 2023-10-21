@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Tabelas</title>
+</head>
+<body>
+    <h1>Lista de Tabelas</h1>
+    <ul>
+        {% for tabela in tabelas %}
+            <li>
+               {{ tabela.0 }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
