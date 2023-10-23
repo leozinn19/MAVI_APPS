@@ -1,0 +1,14 @@
+.cabecalho {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 1rem; /* Ajuste o espaçamento conforme necessário */
+    z-index: 1000; /* Certifique-se de que o z-index seja maior que outros elementos se necessário */
+    width: 50px; /* Substitua pelo tamanho desejado */
+    height: 10px;
+}
+
+.cabecalho img {
+    max-width: 100%; /* Garante que o logo não ultrapasse o tamanho do container */
+    background-color: transparent;
+}

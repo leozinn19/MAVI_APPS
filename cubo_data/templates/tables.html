@@ -1,16 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Lista de Tabelas</title>
-</head>
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+
+<script>
+    function showSaveButton() {
+        document.getElementById('saveButton').style.display = 'block';
+    }
+</script>
 <body>
-    <h1>Lista de Tabelas</h1>
-    <ul>
+    <h1 class="futuristic">{{db_name}}</h1>
+
+    <ul class="grid">
         {% for tabela in tabelas %}
-            <li>
-               {{ tabela.0 }}
-            </li>
+        <a href="{% url 'view_table' table_name=tabela.0 db_name=db_name %}">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            {{ tabela.0 }}
+        </a>
         {% endfor %}
     </ul>
 </body>
 </html>
+{%endblock%}

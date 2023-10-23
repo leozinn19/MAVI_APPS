@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Página Inicial</title>
-</head>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 <body>
-    <h1>Bem-vindo à Página Inicial</h1>
-    <a href="{% url 'login' %}">Login</a>
+
+
+
+    <ul class="app">
+        <a href="{% url 'login_page' %}">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Cubo Data
+    </a>
+    </ul>
 </body>
 </html>
+{% endblock %}

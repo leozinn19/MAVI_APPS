@@ -1,0 +1,43 @@
+body{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    background-color: #050801;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+
+h1{
+  position: absolute;
+  margin-left: 460px;
+  text-transform: uppercase;
+  color: white;
+  top: 5%;
+}
+.grid{
+  margin-top: 15%;
+  text-align: center;
+}
+.services{
+  position: relative;
+  text-align: center;
+  margin-top: 15%;
+}
+.app{
+  margin-left: 40%;
+  margin-top: 15%;
+}
+.futuristic{
+  font-size: 20px;
+  font-weight: 200;
+  font-style: italic;
+  color: #fff;
+  padding: 1rem;
+  border: 0.4rem solid #fff;
+  border-radius: 2rem;
+  animation: flicker 1.5s infinite alternate;
+  width: 120px;
+  text-align: center;
+  margin-right: 60%;
+  margin-top: 20px;
+}

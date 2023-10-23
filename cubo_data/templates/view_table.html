@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static '../static/styles/style.css' %}">
+
+</head>
+<body>
+
+    <ul class="services">
+    <a href="{% url 'save_table' table_name=table_name db_name=db_name %}"> SALVAR {{table_name}} DE {{db_name}}</a>
+    
+    <a href="{% url 'upload_file' table_name=table_name db_name=db_name %}"> exportar {{table_name}} DE {{db_name}}</a>
+    
+    <a href="{% url 'edit_data' table_name=table_name db_name=db_name %}"> editar {{table_name}} DE {{db_name}}</a>
+    </ul>
+</body>
+</html>
+{% endblock %}

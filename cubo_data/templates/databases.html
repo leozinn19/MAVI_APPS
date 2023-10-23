@@ -1,16 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Lista de BANCOS</title>
-</head>
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+
 <body>
-    <h1>Lista de BANCOS</h1>
-    <ul>
+    <h1>bancos de dados disponiveis</h1>
+
+    <ul class="grid">
         {% for db in dbs %}
-            <li>
-                <a href="{% url 'tables' db.0 %}">{{ db.0 }}</a>
-            </li>
+        <a href="{% url 'tables' db.0 %}">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            {{ db.0 }}
+        </a>
         {% endfor %}
     </ul>
+
 </body>
 </html>
+{%endblock%}
