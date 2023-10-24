@@ -11,6 +11,7 @@ from .services.list_tables import tables
 from .services.import_edit import import_edit
 from .services.save_table import save_table
 from .services.append_data import append_data, get_auto_increment_columns
+from .services.aply_edit import aplicar_edicoes_service
 
 def index(request):
     return render(request, 'index.html')
@@ -70,3 +71,10 @@ def edit_data(request, table_name, db_name):
 def import_data(request, table_name, db_name):
     _import = import_edit(table_name, db_name)
     return _import
+
+def apply_edit(request,table_name,db_name):
+    form = UploadFileForm(request.POST, request.FILES)
+    file = request.FILES['file']
+    aplicar_edicoes_service(table_name, db_name, file)
+
+    return render(request, 'edit.html', {'table_name': table_name, 'db_name': db_name})

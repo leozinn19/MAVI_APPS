@@ -1,5 +1,6 @@
 from django.urls import path
-from cubo_data.views import index, login, list_tables, list_databases, view_table, save_table_to_excel, append_excel, edit_data, import_data
+from cubo_data.views import ( index, login, list_tables, list_databases, view_table, save_table_to_excel, 
+                             append_excel, edit_data, import_data, apply_edit )
 urlpatterns = [
     path("", index),
     path("login/", login, name='login_page'),
@@ -10,4 +11,5 @@ urlpatterns = [
     path('upload_file/<str:table_name>/<str:db_name>', append_excel, name='upload_file'),
     path('edit_file/<str:table_name>/<str:db_name>', edit_data, name='edit_data'),
     path('import_data/<str:table_name>/<str:db_name>/', import_data, name='import_data'),
+    path('apply_edit/<str:table_name>/<str:db_name>/', apply_edit, name='apply_edit'),
 ]

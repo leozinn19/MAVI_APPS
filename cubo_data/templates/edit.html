@@ -8,12 +8,13 @@
     <h1>Append Realizado</h1>
 
     <form method="post" enctype="multipart/form-data">
-    <a>
-        {% csrf_token %}
-        {{ form.file }}
-    </a>
-    <a>
-        <input type="submit" value="Enviar">    
+        <a>
+            {% csrf_token %}
+            {{ form.file }}
+        </a>
+        <a>
+            <input type="submit" value="Enviar">
+        </a>  
     </a>
     <a href="{% url 'import_data' table_name=table_name db_name=db_name %}" class="btn-import">Importar {{table_name}} para editar</a>
     </form>

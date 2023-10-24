@@ -1,14 +1,13 @@
 import pandas as pd
 from django.db import connection
 
-def aplicar_edicoes_service(table_name, db_name):
-
-
-    excel_file = pd.read_excel(f'./EDITS/{table_name.upper()}_EDIT_{db_name}.xlsx')
+def aplicar_edicoes_service(table_name, db_name, file):
+    excel_file = pd.read_excel(file)
     primary_key = f'cod_{table_name}'
     i = 0
     changes = 0
     with connection.cursor() as cursor:
+        cursor.execute(f"USE {db_name}")
         updated_data_message = "DADOS ATUALIZADOS:<br>"
         for _, row in excel_file.iterrows():
             primary_key_column = row[primary_key]
@@ -32,6 +31,3 @@ def aplicar_edicoes_service(table_name, db_name):
         if changes==0:
             updated_data_message += f'Não foi realizada nenhuma edição na tabela {table_name}'
         
-        self.result_label.setHtml(updated_data_message)
-        apply_button.hide()
-        connection.commit()
